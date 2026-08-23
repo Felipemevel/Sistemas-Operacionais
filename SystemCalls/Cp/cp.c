@@ -6,7 +6,7 @@
 int main(int argc, char* argv[]) {
 
     if (argc != 3) {
-        printf(">>> Erro!\nModo de uso: ./cp <arquivo_original> <arquivo_copia>\n");
+        printf(">>> Erro!\n>>> Modo de uso: ./cp <arquivo_original> <arquivo_copia>\n");
         return 1;
     }
 
