@@ -17,6 +17,16 @@ int main(int argc, char* argv[]) {
     }
 
     DIR* diretorio_ = opendir(diretorio);
+    if (diretorio_ == NULL) {
+        if (errno == ENOENT) {
+            printf(">>> Diretório inexistente.\n");
+            return 1;
+        } else {
+            printf(">>> Erro inesperado.");
+            return 1;
+        }
+    }
+
     struct dirent* item;
     while ((item = readdir(diretorio_)) != NULL) {
         printf(">>> %s\n", item->d_name);
